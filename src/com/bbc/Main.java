@@ -209,6 +209,33 @@ public class Main {
             my_signature.update(signedContentFromSignature);
             System.out.println("La firma è verificata? "+my_signature.verify(encripted_digest));
 
+
+            /*
+            multiple signature
+             */
+            documento = new File("./resources/document_signed_visible.pdf");
+            CreateVisibleSignature doubleSigning = new CreateVisibleSignature("resources/Consiglio_s198283.p12",mypassword);
+
+            image = new FileInputStream("resources/Motto_polito.jpg");
+
+            PDVisibleSignDesigner doubleVisibleSig = new PDVisibleSignDesigner("./resources/document_signed_visible.pdf", image, 1);
+            doubleVisibleSig.xAxis(0).yAxis(300).zoom(-50).signatureFieldName("signature");
+
+            PDVisibleSigProperties doubleSignatureProperties = new PDVisibleSigProperties();
+
+            doubleSignatureProperties.signerName("name").signerLocation("location").signatureReason("Security").preferredSize(0)
+                    .page(1).visualSignEnabled(true).setPdVisibleSignature(visibleSig).buildSignature();
+
+            doubleSigning.signPDF(documento, signatureProperties);
+            documento = new File("./resources/document_signed_visible.pdf");
+
+            br = new BufferedReader(new FileReader(documento));
+            writer = new PrintWriter("./resources/output_after_sign_visible.txt", "UTF-8");
+            for (String line; (line = br.readLine()) != null;) {
+                writer.println(line);
+            }
+            writer.close();
+
             PDfirmato.close();
 
         } catch (IOException e) {
