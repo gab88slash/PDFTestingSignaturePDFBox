@@ -249,12 +249,6 @@ public class CreateSignature implements SignatureInterface
                     CMSSignedGenerator.DIGEST_SHA256);
             gen.addCertificatesAndCRLs(certStore);
             CMSSignedData signedData = gen.generate(input, false, provider.getName());
-            byte[] cipherData = signedData.getEncoded();
-            StringBuffer signature = new StringBuffer();
-            for (int i=0;i<cipherData.length;i++) {
-                signature.append(Integer.toHexString(0xFF & cipherData[i]));
-            }
-            System.out.println("Hex signature original : " + signature.toString());
             return signedData.getEncoded();
         }
         catch (Exception e)
