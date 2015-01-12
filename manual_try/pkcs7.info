@@ -1,0 +1,548 @@
+CMS_ContentInfo: 
+  contentType: pkcs7-signedData (1.2.840.113549.1.7.2)
+  d.signedData: 
+    version: 1
+    digestAlgorithms:
+        algorithm: sha256 (2.16.840.1.101.3.4.2.1)
+        parameter: NULL
+    encapContentInfo: 
+      eContentType: pkcs7-data (1.2.840.113549.1.7.1)
+      eContent: <ABSENT>
+    certificates:
+      d.certificate: 
+        cert_info: 
+          version: 2
+          serialNumber: 0
+          signature: 
+            algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+            parameter: NULL
+          issuer: O=EuroPKI, OU=EuroPKI root, CN=EuroPKI root CA
+          validity: 
+            notBefore: Dec 18 13:42:05 2010 GMT
+            notAfter: Dec 31 23:59:59 2020 GMT
+          subject: O=EuroPKI, OU=EuroPKI root, CN=EuroPKI root CA
+          key: 
+            algor: 
+              algorithm: rsaEncryption (1.2.840.113549.1.1.1)
+              parameter: NULL
+            public_key:  (0 unused bits)
+              0000 - 30 82 01 0a 02 82 01 01-00 c0 36 46 2d 50   0.........6F-P
+              000e - bd d1 94 44 3d f8 4d f7-3f d0 5b 6a f4 8a   ...D=.M.?.[j..
+              001c - 5e b2 40 3a 70 bc ff ff-15 e1 fe 1e 26 23   ^.@:p.......&#
+              002a - 36 7d 37 d0 c6 12 4c 62-ba 4a a1 51 23 54   6}7...Lb.J.Q#T
+              0038 - 71 58 1e f8 66 5b d7 05-a5 c4 c0 6d 50 c2   qX..f[.....mP.
+              0046 - 63 ec d2 7b e6 4f e3 75-cb a5 e4 f7 56 11   c..{.O.u....V.
+              0054 - 23 7b ff 18 08 89 af f7-be a8 2a ff 1e 39   #{........*..9
+              0062 - 7e 01 46 2e 21 55 6f 40-d6 d7 fb ed 27 79   ~.F.!Uo@....'y
+              0070 - 07 79 19 a3 2e 6a 28 8e-91 63 6a fa c2 28   .y...j(..cj..(
+              007e - 81 f8 31 04 99 4b 2d 13-a7 29 8f 7d 1d 8b   ..1..K-..).}..
+              008c - 82 62 9e 8e 6d ef b5 14-3b e6 30 78 32 05   .b..m...;.0x2.
+              009a - ea d3 71 bf ad 69 73 94-06 0d bd 06 6c bd   ..q..is.....l.
+              00a8 - 3d 00 02 68 c2 85 42 a0-0b fa 8b 80 21 88   =..h..B.....!.
+              00b6 - 32 d3 1e 2c 6e 91 f0 bb-66 4d b3 ab c3 8e   2..,n...fM....
+              00c4 - 09 8b 30 13 bb 5a 8e c2-29 29 30 09 0a 5e   ..0..Z..))0..^
+              00d2 - 0a f8 64 10 db 6d 31 07-7b 14 bd 8f 3d bc   ..d..m1.{...=.
+              00e0 - 40 84 54 5d f2 a3 61 30-87 c2 3a 9d 2b be   @.T]..a0..:.+.
+              00ee - e9 fc 9d 75 da ea b6 7c-aa 06 ee a1 aa fb   ...u...|......
+              00fc - 79 5d 61 3f 2e a9 d6 28-ef 12 13 e0 ed 02   y]a?...(......
+              010a - 03 01 00 01                                 ....
+          issuerUID: <ABSENT>
+          subjectUID: <ABSENT>
+          extensions:
+              object: X509v3 Basic Constraints (2.5.29.19)
+              critical: TRUE
+              value: 
+                0000 - 30 03 01 01 ff                           0....
+
+              object: X509v3 Key Usage (2.5.29.15)
+              critical: TRUE
+              value: 
+                0000 - 03 02 01 06                              ....
+
+              object: X509v3 Subject Key Identifier (2.5.29.14)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 04 14 f0 71 1c 28 33 58-b7 c5 c6 b5 c3   ...q.(3X.....
+                000d - bf 51 75 a8 50 f4 9c d2-34               .Qu.P...4
+
+              object: X509v3 Authority Key Identifier (2.5.29.35)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 16 80 14 f0 71 1c 28-33 58 b7 c5 c6   0....q.(3X...
+                000d - b5 c3 bf 51 75 a8 50 f4-9c d2 34         ...Qu.P...4
+
+              object: X509v3 Certificate Policies (2.5.29.32)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 40 30 3e 06 0a 2b 06-01 04 01 a9 07   0@0>..+......
+                000d - 01 01 02 30 30 30 2e 06-08 2b 06 01 05   ...000...+...
+                001a - 05 07 02 01 16 22 68 74-74 70 3a 2f 2f   ....."http://
+                0027 - 77 77 77 2e 65 75 72 6f-70 6b 69 2e 6f   www.europki.o
+                0034 - 72 67 2f 63 61 2f 63 70-73 2f 31 2e 32   rg/ca/cps/1.2
+                0041 - 2f                                       /
+
+              object: Authority Information Access (1.3.6.1.5.5.7.1.1)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 63 30 23 06 08 2b 06-01 05 05 07 30   0c0#..+.....0
+                000d - 01 86 17 68 74 74 70 3a-2f 2f 6f 63 73   ...http://ocs
+                001a - 70 2e 65 75 72 6f 70 6b-69 2e 6f 72 67   p.europki.org
+                0027 - 30 3c 06 08 2b 06 01 05-05 07 30 02 86   0<..+.....0..
+                0034 - 30 68 74 74 70 3a 2f 2f-77 77 77 2e 65   0http://www.e
+                0041 - 75 72 6f 70 6b 69 2e 6f-72 67 2f 63 61   uropki.org/ca
+                004e - 2f 63 65 72 74 73 2f 65-75 72 6f 70 6b   /certs/europk
+                005b - 69 5f 72 6f 6f 74 2e 63-65 72            i_root.cer
+
+              object: X509v3 CRL Distribution Points (2.5.29.31)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 36 30 34 a0 32 a0 30-86 2e 68 74 74   0604.2.0..htt
+                000d - 70 3a 2f 2f 77 77 77 2e-65 75 72 6f 70   p://www.europ
+                001a - 6b 69 2e 6f 72 67 2f 63-61 2f 63 72 6c   ki.org/ca/crl
+                0027 - 2f 65 75 72 6f 70 6b 69-5f 72 6f 6f 74   /europki_root
+                0034 - 2e 63 72 6c                              .crl
+        sig_alg: 
+          algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+          parameter: NULL
+        signature:  (0 unused bits)
+          0000 - 7b 45 2c 30 41 3c cb f2-74 b2 53 66 eb 04 db   {E,0A<..t.Sf...
+          000f - 71 dc 5d 81 f2 b8 5e b3-44 14 d5 0b fd 2d 92   q.]...^.D....-.
+          001e - c5 00 26 27 41 d7 57 75-5d 72 6c d8 bc 52 ec   ..&'A.Wu]rl..R.
+          002d - 3a ee 36 d3 91 96 b7 11-d4 9c 77 73 65 fb 21   :.6.......wse.!
+          003c - be 7a 40 b9 53 d2 e9 c6-f8 29 a1 5d 0c 28 e0   .z@.S....).].(.
+          004b - c5 7b 19 29 bf c3 ef e3-71 cd 66 bf f0 f7 58   .{.)....q.f...X
+          005a - 94 ad 95 9f d4 82 35 2d-5c a3 44 90 14 c1 12   ......5-\.D....
+          0069 - 55 62 43 d7 cc 2a 55 5e-6d cb f9 a7 35 6c 81   UbC..*U^m...5l.
+          0078 - 49 30 fd 55 f9 99 9b 4c-b6 7f 6c 98 04 60 83   I0.U...L..l..`.
+          0087 - e7 e3 84 6a 23 7e 05 60-56 92 57 1e 68 b7 67   ...j#~.`V.W.h.g
+          0096 - 69 81 ef 13 d8 81 07 15-13 b7 94 55 2e 37 67   i..........U.7g
+          00a5 - bf 3f 0c d5 80 7b 89 41-61 be bd 89 e9 ef ff   .?...{.Aa......
+          00b4 - c9 10 b8 6a 35 13 b7 71-00 cd ac 7f fb c4 8d   ...j5..q.......
+          00c3 - cc 15 fe b4 e2 db da 47-f6 ea aa bb c2 d3 5e   .......G......^
+          00d2 - 64 44 ed f6 34 f9 64 6f-ac 98 9f 9c 5c c4 2e   dD..4.do....\..
+          00e1 - e4 63 82 08 87 a1 19 89-68 63 37 61 98 69 da   .c......hc7a.i.
+          00f0 - 75 2d 41 3c 98 e7 84 31-ba 19 d2 15 0a 60 0f   u-A<...1.....`.
+          00ff - e6                                             .
+
+      d.certificate: 
+        cert_info: 
+          version: 2
+          serialNumber: 2
+          signature: 
+            algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+            parameter: NULL
+          issuer: O=EuroPKI, OU=EuroPKI root, CN=EuroPKI root CA
+          validity: 
+            notBefore: Dec 18 13:46:47 2010 GMT
+            notAfter: Dec 31 23:59:59 2020 GMT
+          subject: C=IT, O=EuroPKI, OU=EuroPKI Italy, CN=EuroPKI Italian CA
+          key: 
+            algor: 
+              algorithm: rsaEncryption (1.2.840.113549.1.1.1)
+              parameter: NULL
+            public_key:  (0 unused bits)
+              0000 - 30 82 01 0a 02 82 01 01-00 97 c4 c9 5d 6d   0...........]m
+              000e - ae d6 a3 f1 9f 4f e5 c8-80 4d bc 7d 52 e4   .....O...M.}R.
+              001c - b0 4c dd 29 0b 16 83 47-3d 2c 7c 4d 98 99   .L.)...G=,|M..
+              002a - f9 fe e7 29 77 a7 37 68-74 ec a8 48 41 19   ...)w.7ht..HA.
+              0038 - b2 71 09 f7 15 0a 95 53-39 bc 7e e5 7a cc   .q.....S9.~.z.
+              0046 - af 09 7b 6d 09 be 9f e2-b0 bf df 3d c3 d0   ..{m.......=..
+              0054 - 6e ee 46 d7 e8 9a 1f bb-94 ff d1 6e ab b3   n.F........n..
+              0062 - 00 14 bf 8f 77 e4 ae 24-64 84 57 44 66 ee   ....w..$d.WDf.
+              0070 - 31 0d 23 7e b8 f6 a9 d9-2d 9b d7 cb 0e 13   1.#~....-.....
+              007e - a3 69 2a 40 19 42 50 92-f1 49 fc a2 ef 8a   .i*@.BP..I....
+              008c - c8 aa a1 03 5f 97 a2 98-27 fe 08 af 26 53   ...._...'...&S
+              009a - d8 2d cc e6 59 08 28 74-ca 11 54 dc 81 d1   .-..Y.(t..T...
+              00a8 - da 08 b2 a5 ab 22 9d 20-ec b3 93 ce f8 b6   .....". ......
+              00b6 - d5 2e 1e 15 e8 d3 14 e6-86 71 da dc 79 14   .........q..y.
+              00c4 - a6 9e 60 92 21 51 1a 85-2f 14 55 32 57 f6   ..`.!Q../.U2W.
+              00d2 - 10 66 de e0 b3 ae 02 56-af d4 66 6d f2 e7   .f.....V..fm..
+              00e0 - 59 a2 21 ff 6f e0 fd 8f-b8 5b 77 a9 cd 1e   Y.!.o....[w...
+              00ee - e9 a3 4b c9 c2 de 19 7b-63 26 f1 16 0c 0c   ..K....{c&....
+              00fc - 9e 94 4f 73 74 03 28 c1-a3 e3 27 fa 21 02   ..Ost.(...'.!.
+              010a - 03 01 00 01                                 ....
+          issuerUID: <ABSENT>
+          subjectUID: <ABSENT>
+          extensions:
+              object: X509v3 Basic Constraints (2.5.29.19)
+              critical: TRUE
+              value: 
+                0000 - 30 03 01 01 ff                           0....
+
+              object: X509v3 Key Usage (2.5.29.15)
+              critical: TRUE
+              value: 
+                0000 - 03 02 01 06                              ....
+
+              object: X509v3 Subject Key Identifier (2.5.29.14)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 04 14 d0 75 e5 3f eb ca-ba 6b 96 51 7c   ...u.?...k.Q|
+                000d - 20 a5 98 bd f3 67 d3 b4-4a                ....g..J
+
+              object: X509v3 Authority Key Identifier (2.5.29.35)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 16 80 14 f0 71 1c 28-33 58 b7 c5 c6   0....q.(3X...
+                000d - b5 c3 bf 51 75 a8 50 f4-9c d2 34         ...Qu.P...4
+
+              object: X509v3 Certificate Policies (2.5.29.32)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 40 30 3e 06 0a 2b 06-01 04 01 a9 07   0@0>..+......
+                000d - 01 01 02 30 30 30 2e 06-08 2b 06 01 05   ...000...+...
+                001a - 05 07 02 01 16 22 68 74-74 70 3a 2f 2f   ....."http://
+                0027 - 77 77 77 2e 65 75 72 6f-70 6b 69 2e 6f   www.europki.o
+                0034 - 72 67 2f 63 61 2f 63 70-73 2f 31 2e 32   rg/ca/cps/1.2
+                0041 - 2f                                       /
+
+              object: Authority Information Access (1.3.6.1.5.5.7.1.1)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 63 30 23 06 08 2b 06-01 05 05 07 30   0c0#..+.....0
+                000d - 01 86 17 68 74 74 70 3a-2f 2f 6f 63 73   ...http://ocs
+                001a - 70 2e 65 75 72 6f 70 6b-69 2e 6f 72 67   p.europki.org
+                0027 - 30 3c 06 08 2b 06 01 05-05 07 30 02 86   0<..+.....0..
+                0034 - 30 68 74 74 70 3a 2f 2f-77 77 77 2e 65   0http://www.e
+                0041 - 75 72 6f 70 6b 69 2e 6f-72 67 2f 63 61   uropki.org/ca
+                004e - 2f 63 65 72 74 73 2f 65-75 72 6f 70 6b   /certs/europk
+                005b - 69 5f 72 6f 6f 74 2e 63-65 72            i_root.cer
+
+              object: X509v3 CRL Distribution Points (2.5.29.31)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 36 30 34 a0 32 a0 30-86 2e 68 74 74   0604.2.0..htt
+                000d - 70 3a 2f 2f 77 77 77 2e-65 75 72 6f 70   p://www.europ
+                001a - 6b 69 2e 6f 72 67 2f 63-61 2f 63 72 6c   ki.org/ca/crl
+                0027 - 2f 65 75 72 6f 70 6b 69-5f 72 6f 6f 74   /europki_root
+                0034 - 2e 63 72 6c                              .crl
+        sig_alg: 
+          algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+          parameter: NULL
+        signature:  (0 unused bits)
+          0000 - 84 32 de 33 1f dd 3f 6c-21 c0 66 fb 21 36 ba   .2.3..?l!.f.!6.
+          000f - b0 8e 89 51 06 77 1f d0-d0 02 97 53 19 fc fa   ...Q.w.....S...
+          001e - 88 b2 0e 89 97 9e a1 4b-7f 5c 4f 64 62 07 05   .......K.\Odb..
+          002d - a7 6d c8 0b 5f b0 43 3b-1f 63 ac 11 58 a4 ad   .m.._.C;.c..X..
+          003c - 17 89 6c 72 a0 d2 94 d9-f0 e3 2c 9a 55 89 28   ..lr......,.U.(
+          004b - 81 8d c1 93 ca 44 ed 0c-4d 5c 89 60 b0 59 38   .....D..M\.`.Y8
+          005a - 20 c9 db 0c 26 a6 0a 89-ff a7 13 06 3d 5f 2b    ...&.......=_+
+          0069 - b8 1c 15 c4 58 e9 e0 f7-2d 95 bb 9b b9 b6 c1   ....X...-......
+          0078 - d7 40 a2 c4 08 1b cd c0-c5 36 f2 c4 61 40 89   .@.......6..a@.
+          0087 - 09 5f 15 fe 20 80 22 cf-f0 dc c6 24 d4 db 00   ._.. ."....$...
+          0096 - cf f4 df a0 23 17 06 b7-e7 ee 29 3a f4 89 8a   ....#.....):...
+          00a5 - 75 53 ab 77 1c 2d c8 7b-3b bc ec 7d 03 7c 71   uS.w.-.{;..}.|q
+          00b4 - 09 de 57 08 07 39 db 89-8c 0b 90 9e 9e 3f 8a   ..W..9.......?.
+          00c3 - 41 b8 7e 75 cc d7 44 84-00 90 41 5b 04 45 6b   A.~u..D...A[.Ek
+          00d2 - 73 cc ad 42 ff 8d 45 3e-05 6e a8 52 d0 52 f5   s..B..E>.n.R.R.
+          00e1 - 13 6c e4 3d 33 6d 19 d2-b8 cb 2a d6 77 f2 bc   .l.=3m....*.w..
+          00f0 - 3d ad 6c de 1d 86 b5 a9-94 88 3f 0c 76 3d 0c   =.l.......?.v=.
+          00ff - 33                                             3
+
+      d.certificate: 
+        cert_info: 
+          version: 2
+          serialNumber: 1
+          signature: 
+            algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+            parameter: NULL
+          issuer: C=IT, O=EuroPKI, OU=EuroPKI Italy, CN=EuroPKI Italian CA
+          validity: 
+            notBefore: Dec 18 13:58:22 2010 GMT
+            notAfter: Dec 31 23:59:59 2020 GMT
+          subject: C=IT, O=Politecnico di Torino, CN=Politecnico di Torino Certification Authority
+          key: 
+            algor: 
+              algorithm: rsaEncryption (1.2.840.113549.1.1.1)
+              parameter: NULL
+            public_key:  (0 unused bits)
+              0000 - 30 82 01 0a 02 82 01 01-00 c8 69 8f 95 fc   0.........i...
+              000e - 55 01 27 c4 c1 23 c5 90-30 1c 00 d6 73 15   U.'..#..0...s.
+              001c - dc fd 3b 9f 0a a4 21 07-2a 4b 30 9c 7e 6a   ..;...!.*K0.~j
+              002a - 8c 2f f5 07 eb f7 a8 eb-5f 0a 43 fc e2 a5   ./......_.C...
+              0038 - e9 cc f7 06 6b f4 b3 fe-28 3f 9f a8 75 ed   ....k...(?..u.
+              0046 - 9b 58 55 ec 54 42 96 47-72 7c bc 2b ac 17   .XU.TB.Gr|.+..
+              0054 - 53 6f b4 f2 35 ea 0f 2d-e6 7b a6 67 e2 46   So..5..-.{.g.F
+              0062 - 66 a0 b7 66 9b d4 4c db-0e 0d 4c 5b f8 ce   f..f..L...L[..
+              0070 - 4b e1 3d b3 36 d3 b8 1a-a6 65 80 38 41 f5   K.=.6....e.8A.
+              007e - 03 8a ab ee f5 2d e2 a9-f9 1d ea e5 c2 17   .....-........
+              008c - b5 20 4f 59 88 87 e8 43-db cd 02 50 77 17   . OY...C...Pw.
+              009a - 1b 87 77 7d 77 ea f1 9a-d5 b5 5b 82 e6 1a   ..w}w.....[...
+              00a8 - a8 c1 2f 66 06 4d ec ec-6d a8 1b b0 79 92   ../f.M..m...y.
+              00b6 - 31 7e 03 8f 0e d3 ca e1-51 f6 a9 01 36 12   1~......Q...6.
+              00c4 - cb 88 78 b3 cf 40 1d 36-a5 bd e5 76 3e ff   ..x..@.6...v>.
+              00d2 - 91 b3 4d 96 a4 ee 4e 45-1b 1c 30 cd 1f ec   ..M...NE..0...
+              00e0 - 37 a4 3f 4a 3d 71 1d c5-8d c3 e4 4e a3 56   7.?J=q.....N.V
+              00ee - 94 b5 fe 64 e6 35 50 69-27 07 0e 38 b1 19   ...d.5Pi'..8..
+              00fc - ba 8b 40 57 ff d9 f2 2d-1d f0 91 30 c7 02   ..@W...-...0..
+              010a - 03 01 00 01                                 ....
+          issuerUID: <ABSENT>
+          subjectUID: <ABSENT>
+          extensions:
+              object: X509v3 Basic Constraints (2.5.29.19)
+              critical: TRUE
+              value: 
+                0000 - 30 03 01 01 ff                           0....
+
+              object: X509v3 Key Usage (2.5.29.15)
+              critical: TRUE
+              value: 
+                0000 - 03 02 01 06                              ....
+
+              object: X509v3 Subject Key Identifier (2.5.29.14)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 04 14 cd 9b 5b 5b 9e ea-76 21 c4 10 68   ....[[..v!..h
+                000d - e8 d2 2d 37 db 1f 2f c8-e4               ..-7../..
+
+              object: X509v3 Authority Key Identifier (2.5.29.35)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 16 80 14 d0 75 e5 3f-eb ca ba 6b 96   0....u.?...k.
+                000d - 51 7c 20 a5 98 bd f3 67-d3 b4 4a         Q| ....g..J
+
+              object: X509v3 Certificate Policies (2.5.29.32)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 81 86 30 3e 06 0a 2b-06 01 04 01 a9   0..0>..+.....
+                000d - 07 01 01 02 30 30 30 2e-06 08 2b 06 01   ....000...+..
+                001a - 05 05 07 02 01 16 22 68-74 74 70 3a 2f   ......"http:/
+                0027 - 2f 77 77 77 2e 65 75 72-6f 70 6b 69 2e   /www.europki.
+                0034 - 6f 72 67 2f 63 61 2f 63-70 73 2f 31 2e   org/ca/cps/1.
+                0041 - 32 2f 30 44 06 0a 2b 06-01 04 01 a9 07   2/0D..+......
+                004e - 02 01 02 30 36 30 34 06-08 2b 06 01 05   ...0604..+...
+                005b - 05 07 02 01 16 28 68 74-74 70 3a 2f 2f   .....(http://
+                0068 - 77 77 77 2e 69 74 61 6c-79 2e 65 75 72   www.italy.eur
+                0075 - 6f 70 6b 69 2e 6f 72 67-2f 63 61 2f 63   opki.org/ca/c
+                0082 - 70 73 2f 31 2e 32 2f                     ps/1.2/
+
+              object: Authority Information Access (1.3.6.1.5.5.7.1.1)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 70 30 29 06 08 2b 06-01 05 05 07 30   0p0)..+.....0
+                000d - 01 86 1d 68 74 74 70 3a-2f 2f 6f 63 73   ...http://ocs
+                001a - 70 2e 69 74 61 6c 79 2e-65 75 72 6f 70   p.italy.europ
+                0027 - 6b 69 2e 6f 72 67 30 43-06 08 2b 06 01   ki.org0C..+..
+                0034 - 05 05 07 30 02 86 37 68-74 74 70 3a 2f   ...0..7http:/
+                0041 - 2f 77 77 77 2e 69 74 61-6c 79 2e 65 75   /www.italy.eu
+                004e - 72 6f 70 6b 69 2e 6f 72-67 2f 63 61 2f   ropki.org/ca/
+                005b - 63 65 72 74 73 2f 65 75-72 6f 70 6b 69   certs/europki
+                0068 - 5f 69 74 61 6c 79 2e 63-65 72            _italy.cer
+
+              object: X509v3 CRL Distribution Points (2.5.29.31)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 39 30 37 a0 35 a0 33-86 31 68 74 74   0907.5.3.1htt
+                000d - 70 3a 2f 2f 77 77 77 2e-69 74 61 6c 79   p://www.italy
+                001a - 2e 65 75 72 6f 70 6b 69-2e 6f 72 67 2f   .europki.org/
+                0027 - 63 61 2f 63 72 6c 2f 69-74 61 6c 79 5f   ca/crl/italy_
+                0034 - 63 72 6c 2e 63 72 6c                     crl.crl
+        sig_alg: 
+          algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+          parameter: NULL
+        signature:  (0 unused bits)
+          0000 - 53 54 95 88 50 19 5b 8f-11 50 4e 48 d1 2e 0b   ST..P.[..PNH...
+          000f - cd 3e dd 37 9b 63 48 86-00 ad f9 22 08 16 e0   .>.7.cH...."...
+          001e - b8 ae 10 75 d1 5a 87 8a-c0 16 eb c8 57 c4 71   ...u.Z......W.q
+          002d - 1f 15 9d 3a 2f 17 8c 2e-7d e8 1a 73 eb 89 64   ...:/...}..s..d
+          003c - 1d a4 f9 02 ec c0 2d f3-b8 92 c8 81 ba 39 f7   ......-......9.
+          004b - 75 bc dd 28 52 1b 96 82-26 2a 0c a1 0e 57 f5   u..(R...&*...W.
+          005a - 97 dd fa 3d 41 7c 85 7f-cc 04 72 86 8a c4 be   ...=A|....r....
+          0069 - 00 bb 76 81 9f 05 5c 46-de a0 26 40 46 1b a2   ..v...\F..&@F..
+          0078 - 7a 2d 87 3e 14 25 69 5d-dc 67 77 ce 6c 29 aa   z-.>.%i].gw.l).
+          0087 - 93 4c 2c 6d 89 3b 70 49-58 ea c0 ba 7f 52 58   .L,m.;pIX....RX
+          0096 - f5 51 2c e1 3f f7 63 ea-fe 34 cc 07 a2 e4 b1   .Q,.?.c..4.....
+          00a5 - ed 0a 34 94 c1 6c d1 cf-53 3c 9d 3b 33 d4 b4   ..4..l..S<.;3..
+          00b4 - f0 3b 26 f3 03 9f 36 fa-2f df 21 55 5a 8a a3   .;&...6./.!UZ..
+          00c3 - 19 89 c3 70 b6 b1 5f cd-3a 5f ed b9 37 d2 e9   ...p.._.:_..7..
+          00d2 - d9 d9 ca 96 6c b5 16 8e-57 42 52 5a 03 f8 3c   ....l...WBRZ..<
+          00e1 - 0a 9c 3e d7 b4 37 8d 21-f2 ae 03 fd 17 60 e4   ..>..7.!.....`.
+          00f0 - fe c4 71 49 25 81 9a 8b-e7 b7 32 50 20 90 ae   ..qI%.....2P ..
+          00ff - 8f                                             .
+
+      d.certificate: 
+        cert_info: 
+          version: 2
+          serialNumber: 1388
+          signature: 
+            algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+            parameter: NULL
+          issuer: C=IT, O=Politecnico di Torino, CN=Politecnico di Torino Certification Authority
+          validity: 
+            notBefore: Sep 24 12:36:58 2014 GMT
+            notAfter: Dec 31 23:59:59 2015 GMT
+          subject: C=IT, O=Politecnico di Torino, CN=Gabriele  Consiglio/UID=s198283
+          key: 
+            algor: 
+              algorithm: rsaEncryption (1.2.840.113549.1.1.1)
+              parameter: NULL
+            public_key:  (0 unused bits)
+              0000 - 30 82 01 0a 02 82 01 01-00 a8 c7 c2 d1 e0   0.............
+              000e - 11 49 ec 75 4f 9c 2f f3-f8 a2 f0 74 a8 6b   .I.uO./....t.k
+              001c - c8 ad 62 5e 33 a4 fa a2-09 d9 27 fa 68 45   ..b^3.....'.hE
+              002a - d2 e9 a1 b1 e0 a0 2f 27-c0 2b 86 cc 9a b7   ....../'.+....
+              0038 - fd ac 4a 23 3c 5d 34 ce-3a dd 5d 29 e9 e0   ..J#<]4.:.])..
+              0046 - 1e 9b 58 9d 67 16 80 6f-bc 18 6e 36 93 66   ..X.g..o..n6.f
+              0054 - d8 0a 3a 06 ac 88 1a 2d-d0 54 36 2b 22 c9   ..:....-.T6+".
+              0062 - 76 a7 16 18 db 8f 42 bf-02 14 6e bd 4f 11   v.....B...n.O.
+              0070 - 89 d9 b3 dc 86 9d 1d 44-78 42 ce 5a dc e0   .......DxB.Z..
+              007e - c4 b8 e0 1a 9a 58 2c 12-7c 97 c3 5d cb 65   .....X,.|..].e
+              008c - 7c e7 f1 7a 15 20 fb 0a-71 82 61 ca 29 ff   |..z. ..q.a.).
+              009a - 74 f1 8f 67 85 1a 69 89-e5 d3 4a d2 d3 05   t..g..i...J...
+              00a8 - af 4b a4 a8 86 9f d9 5a-8a 2e 51 05 68 ba   .K.....Z..Q.h.
+              00b6 - f1 96 36 79 8d bc 83 85-d4 80 e7 a0 7c 01   ..6y........|.
+              00c4 - f2 92 88 ec c8 11 9d 98-21 d3 77 fa 84 6a   ........!.w..j
+              00d2 - 5f 6a 1e 68 29 1b 3f a5-e1 a8 17 85 24 31   _j.h).?.....$1
+              00e0 - 98 9b 85 2a cc 40 6b 6e-47 a3 f8 b7 13 b2   ...*.@knG.....
+              00ee - 50 5d 1d b4 cf b7 21 78-9b 1f 18 6b 99 f7   P]....!x...k..
+              00fc - 5f 71 ce 99 f2 d3 16 bd-07 11 ab f3 bb 02   _q............
+              010a - 03 01 00 01                                 ....
+          issuerUID: <ABSENT>
+          subjectUID: <ABSENT>
+          extensions:
+              object: X509v3 Key Usage (2.5.29.15)
+              critical: TRUE
+              value: 
+                0000 - 03 02 03 f8                              ....
+
+              object: X509v3 Extended Key Usage (2.5.29.37)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 1e 06 08 2b 06 01 05-05 07 03 02 06   0...+........
+                000d - 08 2b 06 01 05 05 07 03-03 06 08 2b 06   .+.........+.
+                001a - 01 05 05 07 03 04                        ......
+
+              object: X509v3 Subject Alternative Name (2.5.29.17)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 1c 81 1a 73 31 39 38-32 38 33 40 73   0...s198283@s
+                000d - 74 75 64 65 6e 74 69 2e-70 6f 6c 69 74   tudenti.polit
+                001a - 6f 2e 69 74                              o.it
+
+              object: X509v3 Basic Constraints (2.5.29.19)
+              critical: TRUE
+              value: 
+                0000 - 30                                       0
+                0002 - <SPACES/NULS>
+
+              object: X509v3 Subject Key Identifier (2.5.29.14)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 04 14 2d 88 62 45 a7 34-34 d1 2d 62 21   ..-.bE.44.-b!
+                000d - 6b 31 57 94 ef ce de dc-4f               k1W.....O
+
+              object: X509v3 Authority Key Identifier (2.5.29.35)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 16 80 14 cd 9b 5b 5b-9e ea 76 21 c4   0.....[[..v!.
+                000d - 10 68 e8 d2 2d 37 db 1f-2f c8 e4         .h..-7../..
+
+              object: X509v3 Certificate Policies (2.5.29.32)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 81 c0 30 3e 06 0a 2b-06 01 04 01 a9   0..0>..+.....
+                000d - 07 01 01 02 30 30 30 2e-06 08 2b 06 01   ....000...+..
+                001a - 05 05 07 02 01 16 22 68-74 74 70 3a 2f   ......"http:/
+                0027 - 2f 77 77 77 2e 65 75 72-6f 70 6b 69 2e   /www.europki.
+                0034 - 6f 72 67 2f 63 61 2f 63-70 73 2f 31 2e   org/ca/cps/1.
+                0041 - 32 2f 30 44 06 0a 2b 06-01 04 01 a9 07   2/0D..+......
+                004e - 02 01 02 30 36 30 34 06-08 2b 06 01 05   ...0604..+...
+                005b - 05 07 02 01 16 28 68 74-74 70 3a 2f 2f   .....(http://
+                0068 - 77 77 77 2e 69 74 61 6c-79 2e 65 75 72   www.italy.eur
+                0075 - 6f 70 6b 69 2e 6f 72 67-2f 63 61 2f 63   opki.org/ca/c
+                0082 - 70 73 2f 31 2e 32 2f 30-38 06 0a 2b 06   ps/1.2/08..+.
+                008f - 01 04 01 95 62 01 02 02-30 2a 30 28 06   ....b...0*0(.
+                009c - 08 2b 06 01 05 05 07 02-01 16 1c 68 74   .+.........ht
+                00a9 - 74 70 3a 2f 2f 63 61 2e-70 6f 6c 69 74   tp://ca.polit
+                00b6 - 6f 2e 69 74 2f 63 70 73-2f 32 2e 32 2f   o.it/cps/2.2/
+
+              object: Authority Information Access (1.3.6.1.5.5.7.1.1)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 58 30 21 06 08 2b 06-01 05 05 07 30   0X0!..+.....0
+                000d - 01 86 15 68 74 74 70 3a-2f 2f 6f 63 73   ...http://ocs
+                001a - 70 2e 70 6f 6c 69 74 6f-2e 69 74 30 33   p.polito.it03
+                0027 - 06 08 2b 06 01 05 05 07-30 02 86 27 68   ..+.....0..'h
+                0034 - 74 74 70 3a 2f 2f 63 61-2e 70 6f 6c 69   ttp://ca.poli
+                0041 - 74 6f 2e 69 74 2f 63 65-72 74 73 2f 70   to.it/certs/p
+                004e - 6f 6c 69 74 6f 5f 63 61-2e 63 65 72      olito_ca.cer
+
+              object: X509v3 CRL Distribution Points (2.5.29.31)
+              critical: BOOL ABSENT
+              value: 
+                0000 - 30 2e 30 2c a0 2a a0 28-86 26 68 74 74   0.0,.*.(.&htt
+                000d - 70 3a 2f 2f 63 61 2e 70-6f 6c 69 74 6f   p://ca.polito
+                001a - 2e 69 74 2f 63 72 6c 2f-70 6f 6c 69 74   .it/crl/polit
+                0027 - 6f 5f 63 72 6c 2e 63 72-6c               o_crl.crl
+        sig_alg: 
+          algorithm: sha1WithRSAEncryption (1.2.840.113549.1.1.5)
+          parameter: NULL
+        signature:  (0 unused bits)
+          0000 - 0b 99 0b 1a 68 74 1c 5a-2d 57 42 5b 5e a7 36   ....ht.Z-WB[^.6
+          000f - 46 7f a8 b9 80 92 01 fe-23 81 a5 bf 14 95 cf   F.......#......
+          001e - 21 cd d5 6d 8f 38 c9 36-61 ec fb 32 78 61 38   !..m.8.6a..2xa8
+          002d - ef f6 0b d9 5d 2d 50 f8-15 9f 29 57 77 82 9e   ....]-P...)Ww..
+          003c - ce cb 95 d4 d6 54 d0 73-ec 03 fb 0e bf b0 ac   .....T.s.......
+          004b - d4 3a 0c c0 18 ce 98 56-88 eb 54 f3 b3 c9 97   .:.....V..T....
+          005a - 89 6d 21 e5 f1 ee 0b 61-60 54 42 f2 d2 f0 f5   .m!....a`TB....
+          0069 - be fd 20 1d 6e c2 1e 18-16 d4 14 c0 0f 56 6f   .. .n........Vo
+          0078 - 4c 8c 1a 82 41 3e 6b a3-73 01 10 85 b4 0b c3   L...A>k.s......
+          0087 - d4 bd d2 b9 23 41 e4 a1-d8 8e 18 c1 bc 88 7e   ....#A........~
+          0096 - ed f1 ab 1a 2d 95 c2 0a-3b 0c e6 86 5f 4e 20   ....-...;..._N 
+          00a5 - d4 76 d5 5c b7 38 c7 5b-ce d9 9f 79 ca 31 ab   .v.\.8.[...y.1.
+          00b4 - d8 db d1 ef 07 11 50 d3-e4 92 ee 73 f4 8b 0c   ......P....s...
+          00c3 - 6b 35 9a db b0 19 54 ad-c0 f8 e9 f4 57 8e fd   k5....T.....W..
+          00d2 - 58 16 fe 47 82 04 9b f2-a5 34 b8 40 f9 ad be   X..G.....4.@...
+          00e1 - 52 ae 32 09 a5 46 3c 69-53 15 57 65 2b f1 56   R.2..F<iS.We+.V
+          00f0 - 18 80 be d6 fa c3 dd 07-d4 14 30 39 10 49 c6   ..........09.I.
+          00ff - 8d                                             .
+    crls:
+      <EMPTY>
+    signerInfos:
+        version: 1
+        d.issuerAndSerialNumber: 
+          issuer: C=IT, O=Politecnico di Torino, CN=Politecnico di Torino Certification Authority
+          serialNumber: 1388
+        digestAlgorithm: 
+          algorithm: sha256 (2.16.840.1.101.3.4.2.1)
+          parameter: NULL
+        signedAttrs:
+            object: undefined (1.2.840.113583.1.1.8)
+            value.set:
+              SEQUENCE:
+    0:d=0  hl=2 l=   0 cons: SEQUENCE          
+
+            object: contentType (1.2.840.113549.1.9.3)
+            value.set:
+              OBJECT:pkcs7-data (1.2.840.113549.1.7.1)
+
+            object: messageDigest (1.2.840.113549.1.9.4)
+            value.set:
+              OCTET STRING:
+                0000 - 18 b3 99 d2 08 a0 88 15-dd f2 3c 93 b1   ..........<..
+                000d - b6 3b 13 75 7a 6a a2 4b-19 32 56 9d 7a   .;.uzj.K.2V.z
+                001a - 69 d0 db 3a 34 c2                        i..:4.
+        signatureAlgorithm: 
+          algorithm: sha256WithRSAEncryption (1.2.840.113549.1.1.11)
+          parameter: NULL
+        signature: 
+          0000 - 8f 4b 21 91 41 73 ec 57-e6 b0 53 3b b5 e0 4f   .K!.As.W..S;..O
+          000f - b7 05 4f 23 ac 29 9c 1b-db f5 89 ed 16 4a 3e   ..O#.).......J>
+          001e - ab b6 11 72 7b e9 11 7a-ac 31 61 d9 c1 8d ca   ...r{..z.1a....
+          002d - 08 bd 11 3d d3 aa 90 e5-92 20 09 fa 12 ba 59   ...=..... ....Y
+          003c - e7 f6 58 7e 81 cd 79 bd-ed 09 f8 62 c2 c7 6f   ..X~..y....b..o
+          004b - 35 d9 50 92 6f 1a 31 a3-dc ce 99 9a 52 dc e0   5.P.o.1.....R..
+          005a - c7 f6 7d 08 1e 81 a4 43-97 e8 af 96 a1 05 1b   ..}....C.......
+          0069 - 8e 51 f2 e2 27 12 21 b0-6d 05 c9 89 5e 18 46   .Q..'.!.m...^.F
+          0078 - b1 db e0 2b 55 8f 5b 9e-f9 7c 7e b0 ff 9a 7c   ...+U.[..|~...|
+          0087 - 71 a9 76 4d 5e 20 59 00-81 8f 07 e8 20 27 d7   q.vM^ Y..... '.
+          0096 - 9d 3f 9a 5a a7 2b 3a 0c-f1 31 f1 b8 90 d0 bc   .?.Z.+:..1.....
+          00a5 - bf 3c 4d d8 a0 22 9f ab-e1 5f 6c 2c a0 ce 07   .<M.."..._l,...
+          00b4 - 9e b9 25 b3 99 8a 1a 61-90 59 6a 88 d8 f0 7c   ..%....a.Yj...|
+          00c3 - 1c 12 b8 75 06 36 e6 91-08 e3 0e 64 3a 65 3b   ...u.6.....d:e;
+          00d2 - 28 5a 40 00 80 c9 c5 59-0c 11 24 51 f6 d6 9b   (Z@....Y..$Q...
+          00e1 - af c2 68 6d 6f 11 07 b3-7a 5d b3 6b 9f 79 7c   ..hmo...z].k.y|
+          00f0 - 49 e6 1d 4b 44 e6 2e 17-dd 54 17 78 de 76 3a   I..KD....T.x.v:
+          00ff - c5                                             .
+        unsignedAttrs:
+          <EMPTY>

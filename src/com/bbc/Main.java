@@ -7,8 +7,12 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.PDSignature;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.visible.PDVisibleSigProperties;
 import org.apache.pdfbox.pdmodel.interactive.digitalsignature.visible.PDVisibleSignDesigner;
+import org.bouncycastle.asn1.ASN1Object;
+import org.bouncycastle.asn1.ASN1Sequence;
+import org.bouncycastle.asn1.x509.DigestInfo;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import sun.security.pkcs.PKCS7;
+import sun.security.pkcs.PKCS9Attributes;
 import sun.security.pkcs.SignerInfo;
 import sun.security.x509.AlgorithmId;
 
@@ -20,6 +24,7 @@ import java.io.*;
 import java.security.*;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Scanner;
 
@@ -47,14 +52,16 @@ public class Main {
      */
     public static void main(String[] args)
     {
-        System.out.println("This program will generate an example pdf. Then it will sign it programmatically\n" +
-                "checking if the crypted digest is equal to a previously calculated one\n then it will provide a \n" +
-                "visible sign");
-
         CreatePdfWithText creator = new CreatePdfWithText();
         try {
+
+            /*
+            Creation of document
+             */
             document = creator.doIt("./resources/document.pdf","A pdf try - Hello World");
             COSDocument d = document.getDocument();
+
+
 
             BufferedReader br = new BufferedReader(new FileReader("./resources/document.pdf"));
             PrintWriter writer = new PrintWriter("./resources/output_before_sign.txt", "UTF-8");
@@ -62,16 +69,25 @@ public class Main {
                 writer.println(line);
             }
             writer.close();
+            /*
+            end of creation
+             */
+
+            /*
+
+            First Signature
+
+             */
             Scanner keyboard = new Scanner(System.in);
             System.out.println("enter password");
             String mypassword = keyboard.nextLine();
-            CreateSignature signator = new CreateSignature("resources/Consiglio_s198283.p12",mypassword);
+            CreateSignature signator = new CreateSignature("resources/certificate.p12",mypassword);
 
             File documento = new File("./resources/document.pdf");
             documento = signator.signPDF(documento);
 
 
-            documento = new File("./resources/prova_signed.pdf");
+            documento = new File("./resources/document_signed.pdf");
 
             br = new BufferedReader(new FileReader(documento));
             writer = new PrintWriter("./resources/output_after_sign.txt", "UTF-8");
@@ -79,11 +95,15 @@ public class Main {
                 writer.println(line);
             }
             writer.close();
+            /*
+            end of First Signature
+             */
 
-
-
+            /*
+            Visual Signature
+             */
             documento = new File("./resources/document.pdf");
-            CreateVisibleSignature signing = new CreateVisibleSignature("resources/Consiglio_s198283.p12",mypassword);
+            CreateVisibleSignature signing = new CreateVisibleSignature("resources/certificate.p12",mypassword);
 
             FileInputStream image = new FileInputStream("resources/Motto_polito.jpg");
 
@@ -104,11 +124,19 @@ public class Main {
                 writer.println(line);
             }
             writer.close();
-
             /*
-            Exctration of signature from the signed pdf
+            End of Visual Signature
              */
 
+
+            /*
+            Verification Of signature
+             */
+
+
+            /*
+            extraction of pkcs7
+             */
             File documentoFirmato = new File("resources/document_signed.pdf");
             PDDocument PDfirmato = PDDocument.load(documentoFirmato);
             PDSignature firma = PDfirmato.getLastSignatureDictionary();
@@ -118,17 +146,13 @@ public class Main {
              */
             byte[] pkcs7_encoded = firma.getContents(new FileInputStream(documentoFirmato));
 
-            StringBuffer pkcs7_encodedStringBuffer = new StringBuffer();
-            for (int i=0;i<pkcs7_encoded.length;i++) {
-                pkcs7_encodedStringBuffer.append(Integer.toHexString(0xFF & pkcs7_encoded[i]));
-            }
-            System.out.println("Hex pkcs7 padded extracted : " + pkcs7_encodedStringBuffer.toString());
+            System.out.println("Hex pkcs7 padded extracted : " + toHex(pkcs7_encoded));
 
             /*
             this is the content of the pdf on which is calculated the cripted digest. Is obtained using the Byte range.
              */
             byte[] signedContentFromSignature = firma.getSignedContent(new FileInputStream(documentoFirmato));
-            firma.getByteRange();
+
 
             writer = new PrintWriter("./resources/output_after_sign_extracted.txt", "UTF-8");
             for (int i=0;i<signedContentFromSignature.length;i++) {
@@ -140,7 +164,7 @@ public class Main {
             Extraction of the keys and certificates from the keystore
              */
 
-            File ksFile = new File("resources/Consiglio_s198283.p12");
+            File ksFile = new File("resources/certificate.p12");
             KeyStore keystore = KeyStore.getInstance("PKCS12", provider);
             char[] pin = mypassword.toCharArray();
             keystore.load(new FileInputStream(ksFile), pin);
@@ -161,80 +185,61 @@ public class Main {
             /*
             End of extraction
              */
-
-            PKCS7 pkcs7_decoded = new PKCS7(pkcs7_encoded);
-            SignerInfo[] signer_info = pkcs7_decoded.getSignerInfos();
-
-            byte[] encripted_digest = signer_info[0].getEncryptedDigest();
-
-            AlgorithmId digalgoritmo = signer_info[0].getDigestAlgorithmId();
-            AlgorithmId encalgoritmo = signer_info[0].getDigestEncryptionAlgorithmId();
-            System.out.println("Algorithms used: "+digalgoritmo.toString()+" "+encalgoritmo.toString());
-
             /*
-            Decryption of the crypted hash
-             */
-            Cipher decipher = Cipher.getInstance("RSA");
-            decipher.init(Cipher.DECRYPT_MODE,cert[0]);
-            byte[] decipherData = decipher.doFinal(encripted_digest);
-            StringBuffer decDigestString = new StringBuffer();
-            for (int i=0;i<decipherData.length;i++) {
-//                decDigestString.append(Integer.toHexString(0xFF & decipherData[i]));
-                decDigestString.append(String.format("%02x", 0xFF & decipherData[i]));
-            }
-
-            System.out.println("Hex decripted digest  : " + decDigestString.toString());
-
-
-            /*
-            Calculation of the digest SHA-256
+            Calculation of the digest SHA-256 of the PDF signed content
              */
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(signedContentFromSignature);
             byte[] digest = md.digest();
 
-            StringBuffer digestStringBuffer = new StringBuffer();
-            for (int i=0;i<digest.length;i++) {
-//                digestStringBuffer.append(Integer.toHexString(0xFF & digest[i]));
-                digestStringBuffer.append(String.format("%02x", 0xFF & digest[i]));
-            }
-
-            System.out.println("Hex digest from signedContent : " + digestStringBuffer.toString());
+            System.out.println("Digest of PDF signedContent : " + toHex(digest));
+            /*
+            Analisys of pkcs7 information and integrity check on pkcs7
+             */
+            PKCS7 pkcs7_decoded = new PKCS7(pkcs7_encoded);
 
             /*
-            direttamente con firma
+            Information about Algorithm used for the signature
              */
-            Signature my_signature = Signature.getInstance("SHA256WithRSA");
-            my_signature.initVerify(cert[0]);
-            my_signature.update(signedContentFromSignature);
-            System.out.println("La firma è verificata? "+my_signature.verify(encripted_digest));
-
+            SignerInfo[] signer_info = pkcs7_decoded.getSignerInfos();
+            AlgorithmId digalgoritmo = signer_info[0].getDigestAlgorithmId();
+            AlgorithmId encalgoritmo = signer_info[0].getDigestEncryptionAlgorithmId();
+            System.out.println("Algorithms used: "+digalgoritmo.toString()+" "+encalgoritmo.toString());
 
             /*
-            multiple signature
+            Extration of signed attributes
              */
-            documento = new File("./resources/document_signed_visible.pdf");
-            CreateVisibleSignature doubleSigning = new CreateVisibleSignature("resources/Consiglio_s198283.p12",mypassword);
+            PKCS9Attributes signedattributes = signer_info[0].getAuthenticatedAttributes();
 
-            image = new FileInputStream("resources/Motto_polito.jpg");
+            /*
+            Extraction of the stored digest of the PDF signed content
+             */
+            Object messageDigest = signedattributes.getAttribute("MessageDigest").getValue();
+            System.out.println("Extracted Digest of PDF signed Content: "+toHex((byte[])messageDigest) );
+            System.out.println("Digest are equals? :"+Arrays.equals(digest,(byte[]) messageDigest));
 
-            PDVisibleSignDesigner doubleVisibleSig = new PDVisibleSignDesigner("./resources/document_signed_visible.pdf", image, 1);
-            doubleVisibleSig.xAxis(0).yAxis(300).zoom(-50).signatureFieldName("signature");
+            /*
+            Integrity check on PKCS7 SignedAttributes
+             */
 
-            PDVisibleSigProperties doubleSignatureProperties = new PDVisibleSigProperties();
+            /*
+            Digest of the signedattributes
+             */
+            MessageDigest sha256 = MessageDigest.getInstance("SHA-256");
+            byte[] derSignedAttributesHash = sha256.digest(signedattributes.getDerEncoding());
 
-            doubleSignatureProperties.signerName("name").signerLocation("location").signatureReason("Security").preferredSize(0)
-                    .page(1).visualSignEnabled(true).setPdVisibleSignature(visibleSig).buildSignature();
-
-            doubleSigning.signPDF(documento, signatureProperties);
-            documento = new File("./resources/document_signed_visible.pdf");
-
-            br = new BufferedReader(new FileReader(documento));
-            writer = new PrintWriter("./resources/output_after_sign_visible.txt", "UTF-8");
-            for (String line; (line = br.readLine()) != null;) {
-                writer.println(line);
-            }
-            writer.close();
+            /*
+            Extraction of encrypted digest and decryption
+             */
+            byte[] encripted_digest = signer_info[0].getEncryptedDigest();
+            Cipher decipher = Cipher.getInstance("RSA");
+            decipher.init(Cipher.DECRYPT_MODE,cert[0]);
+            byte[] decipherData = decipher.doFinal(encripted_digest);
+            ASN1Object object = ASN1Object.fromByteArray(decipherData);
+            DigestInfo digestInfo = new DigestInfo(ASN1Sequence.getInstance(object.toASN1Object()));
+            System.out.println("Decripted digest  : " + toHex(digestInfo.getDigest()));
+            System.out.println("Signed Attributes Hash: " + toHex(derSignedAttributesHash));
+            System.out.println("Digest are equals? :"+Arrays.equals(digestInfo.getDigest(),derSignedAttributesHash));
 
             PDfirmato.close();
 
@@ -265,5 +270,14 @@ public class Main {
         }
     }
 
+    public static String toHex(byte[] bytes){
 
+        StringBuffer digestStringBuffer = new StringBuffer();
+        for (int i=0;i<bytes.length;i++) {
+            digestStringBuffer.append(String.format("%02x", 0xFF & bytes[i]));
+        }
+
+        return digestStringBuffer.toString();
+    }
 }
+
