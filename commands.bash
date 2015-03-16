@@ -14,12 +14,16 @@ openssl dgst -sha256 -binary contentfordigest >digestedPDF
 
 xxd -r -p pkcs7_extracted > pkcs7_extracted.bin
 
-#decoding the pkcs7
+#decoding the asn1 formatted pkcs7
 
 openssl asn1parse -inform DER <pkcs7_extracted.bin >pkcs7_extracted_decoded
 
+# decodification considering CMS standards
 
-# 5193:d=8  hl=2 l=  32 prim: OCTET STRING      [HEX DUMP]:18B399D208A08815DDF23C93B1B63B13757A6AA24B1932569D7A69D0DB3A34C2
+openssl cms -inform DER -in pkcs7_extracted.bin -noout -cmsout -print >pkcs7.info
+
+# extraction of digest 5193:d=8  hl=2 l=  32
+
 dd if=pkcs7_extracted.bin of=extracted.pdf.digest.bin bs=1 skip=$[ 5193 + 2 ] count=32
 
 validityFlagDigest=$(cmp -b extracted.pdf.digest.bin digestedPDF)
@@ -28,7 +32,8 @@ if [ -z $validityFlagDigest ]; then
 else
     echo "The PDF digest and messageDigest are different. Integrity check failed";
 fi
-#extraction the signature
+
+#extraction the signature  5242:d=5  hl=4 l= 256 prim: OCTET STRING
 
 dd if=pkcs7_extracted.bin of=extracted.sign.bin bs=1 skip=$[ 5242 + 4 ] count=256
 
@@ -36,20 +41,19 @@ dd if=pkcs7_extracted.bin of=extracted.sign.bin bs=1 skip=$[ 5242 + 4 ] count=25
 
 openssl rsautl -verify -pubin -inkey CHIAVEPUBBLICA.pem < extracted.sign.bin > verified.bin
 
-#decode of result
+# simple decode of the asn1 formatted result
 openssl asn1parse -inform der -in verified.bin
+
+# extraction of decrypted hash 17:d=1  hl=2 l=  32
 
 dd if=verified.bin of=decrypted.hash.bin bs=1 skip=$[ 17 + 2 ] count=32
 
-#better analysis of the pkcs7 file
-openssl cms -inform DER -in pkcs7_extracted.bin -noout -cmsout -print >pkcs7.info
-
-#extraction of the signed attributes and conversion of the first byte in generic
+# extraction of the signed attributes and conversion of the first byte in generic
 dd if=pkcs7_extracted.bin of=sigAttributes.bin bs=1 skip=5133 count=$[5193+2+32-5133]
 printf '\x31' | dd conv=notrunc of=sigAttributes.bin bs=1 seek=0
 
 
-# http://qistoph.blogspot.it/2012/01/manual-verify-pkcs7-signed-data-with.html
+# creation of the digest and final verification
 
 openssl dgst -sha256 -binary sigAttributes.bin >sigAttributes.hash.bin
 
